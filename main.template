@@ -1,7 +1,0 @@
-const filePath = process.env.IS_DEBUG_JS == "true" ? "main.in" : "/dev/stdin";
-
-const Main = input => {
-    console.log(input);
-};
-
-Main(require("fs").readFileSync(filePath, "utf8"));
