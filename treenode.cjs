@@ -11,6 +11,26 @@ module.exports = class TreeNode {
             return null;
         }
         let root = new TreeNode(+(strArray[0]), null, null);
+        let q = [root];
+        let index = 1;
+        let qLen = q.length;
+        while (qLen > 0 && index < n) {
+            for (let i = 0; i < qLen && index < n; ++i) {
+                let myRoot = q.shift();
+                if (strArray[index] != "null") {
+                    myRoot.left = new TreeNode(+(strArray[index]), null, null);
+                    q.push(myRoot.left);
+                }
+                ++index;
+                if (index < n) {
+                    if (strArray[index] != "null") {
+                        myRoot.right = new TreeNode(+(strArray[index]), null, null);
+                        q.push(myRoot.right);
+                    }
+                    ++index;
+                }
+            }
+        }
         return root;
     }
 }
