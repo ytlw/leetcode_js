@@ -12,9 +12,7 @@
                 "<node_internals>/**"
             ],
             "console": "integratedTerminal",
-            "type": "pwa-node",
-            "justMyCode": true,
-            "smartStep": true
+            "type": "pwa-node"
         }
     ]
 }
